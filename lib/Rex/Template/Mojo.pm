@@ -43,12 +43,19 @@ use Mojo::Template;
 use Rex -base;
 use 5.010;
 
+sub _render {
+    my ( $content, $vars ) = @_;
+
+    my $t = Mojo::Template->new;
+    my $output = $t->render( $content, $vars );
+    if ( ref $output ) {
+        die $output;
+    }
+    return $output;
+}
+
 sub import {
-    set template_function => sub {
-        my ( $content, $vars ) = @_;
-        my $t = Mojo::Template->new;
-        return $t->render( $content, $vars );
-    };
+    set template_function => \&_render;
 }
 
 1;

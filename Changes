@@ -1,0 +1,8 @@
+Revision history for Rex-Template-Mojo
+
+1.001  Sat, 18 Jul 2020 09:21:26 CEST
+
+  - Update dist.ini. (RT#91864)
+  - Depend on Rex. (RT#125192)
+  - Add '-vars' pragma.
+  - Handle Mojo::Exception.

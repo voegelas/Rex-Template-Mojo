@@ -100,7 +100,7 @@ package Rex::Template::Mojo;
 use strict;
 use warnings;
 
-our $VERSION = "1.0";
+our $VERSION = "1.001";
 
 use Mojo::Template;
 use Rex -base;
